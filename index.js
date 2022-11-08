@@ -11,5 +11,63 @@ const options = ["piedra", "papel", "tijera"]
 function playerSelection(){
     playerSelection = prompt("piedra, papel o tijeras?")
     return playerSelection};
-console.log(options)
+function getComputerChoice(){
+   let choice = options[Math.floor(Math.random() * options.length)];
+    return choice;
+};
+function checkwinner (playerSelection , computerSelection){
+    if (playerSelection == computerSelection){
+        return "empate";
+    }
+else if(
+    (playerSelection == "piedra" && computerSelection == "tijera" ) ||            
+    (playerSelection == "papel" && computerSelection == "piedra") ||       
+    (playerSelection == "tijera" && computerSelection == "papel" )){
+       return "player";
+    }   
+else{
+        return "computer";
+}
 
+
+}
+
+function playground(playerSelection, computerSelection){
+    const result = checkwinner(playerSelection, computerSelection)
+    if (result == "empate"){
+        return "Es un empate!";
+    }
+    else if(result == "player"){
+        return `Ganaste! ${playerSelection} es mejor que ${computerSelection}`
+    }else{
+        return `Perdiste! ${computerSelection} es mejor que ${playerSelection}`
+    }
+   
+
+
+}   
+
+function game(){
+    let puntajeJugador = 0
+    let puntajeComputadora = 0
+     for (let i = 0; i < 5; i++) {
+    const playerSelection = prompt("piedra, papel o tijera?")
+    const computerSelection = getComputerChoice()
+    console.log(playground(playerSelection, computerSelection))
+    if(checkwinner(playerSelection, computerSelection) == "player"){ 
+        puntajeJugador++
+    }
+    else if(checkwinner(playerSelection, computerSelection) == "computer"){
+        puntajeComputadora++
+    }
+    if(puntajeJugador > puntajeComputadora){
+        console.log("Has ganado!")
+    }
+    else if (puntajeComputadora > puntajeJugador){
+        console.log("Has perdido el juego!")
+    }
+    else{
+        console.log("Hubo empate!")
+    }
+}
+}
