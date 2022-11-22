@@ -47,27 +47,4 @@ function playground(playerSelection, computerSelection){
 
 }   
 
-function game(){
-    let puntajeJugador = 0
-    let puntajeComputadora = 0
-     for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt("piedra, papel o tijera?")
-    const computerSelection = getComputerChoice()
-    console.log(playground(playerSelection, computerSelection))
-    if(checkwinner(playerSelection, computerSelection) == "player"){ 
-        puntajeJugador++
-    }
-    else if(checkwinner(playerSelection, computerSelection) == "computer"){
-        puntajeComputadora++
-    }
-    if(puntajeJugador > puntajeComputadora){
-        console.log("Has ganado!")
-    }
-    else if (puntajeComputadora > puntajeJugador){
-        console.log("Has perdido el juego!")
-    }
-    else{
-        console.log("Hubo empate!")
-    }
-}
-}
+const btn = document.querySelectorAll("button")

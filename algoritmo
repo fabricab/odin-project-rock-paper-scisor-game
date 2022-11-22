@@ -1,0 +1,27 @@
+playerselection
+playerselection = prompt(piedra, papel o tijeras?)
+return playerselection
+
+computerselection
+opciones = ["piedra, papel o tijera?"]
+elige aleattoreamente uno de esas 3 opciones
+return computerSelection
+
+returnselection
+
+playground (playerselection, computerSelection)
+
+if (playerselection == computerSelection){
+    console.log("es un empate!")
+}
+else if{
+    (playerselection == "piedra" && computerSelection == "tijera")
+    console.log("Ganaste! piedra es mejor que tijera.")  
+    (playerselection == "papel" && computerSelection == "" )
+    (playerselection == )
+    (playerselection == )
+    (playerselection == )
+    (playerselection == )   
+}
+game ()
+play
